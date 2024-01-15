@@ -357,10 +357,10 @@
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
           <p>
-            Make the girl dance like the dancer.
+            Make the man dance like the performer.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/v1.mp4"
+            <source src="./static/videos/testcvpr10_27.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -373,11 +373,10 @@
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              Make the man dance like the performer.
             </p>
             <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
+              <source src="./static/videos/testcvpr4_22.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -398,6 +397,35 @@
           <p>
             Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
             viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/v1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">3DHM Enables Random Camera Angles</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using 3D, you can synthesize moving humans from different camera angles.
           </p>
         </div>
         <div class="content has-text-centered">
