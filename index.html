@@ -95,7 +95,7 @@
             color: #FED8B1 !important; /* Set the title color to white */
         }
       .section h3 {
-            color: white !important; /* Set the title color to white */
+            color: #FED8B1 !important; /* Set the title color to white */
         }
 </style>
 
@@ -138,7 +138,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Synthezing Moving People with 3D Control*</h1>
+          <h1 class="title is-1 publication-title">Synthezing Moving People with 3D Control</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block" style="color: #82CAFF;">
               <a href="https://sites.google.com/site/boyilics/home">Boyi Li</a>,</span>
@@ -241,49 +241,19 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
+            <source src="./static/videos/testcvpr4_27.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
+            <source src="./static/videos/testcvpr12_11.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
+            <source src="./static/videos/testcvpr16_21.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -305,27 +275,19 @@
             deforming scene using photos/videos captured casually from mobile phones.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            We present a diffusion model-based framework for animating people from single images for a given target 3D motion sequence. 
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Our approach has two core components: a) learning priors about invisible parts of the human body and clothing, and b) rendering novel body poses 
+            with proper clothing and texture. First, we learn an in-filling diffusion model to hallucinate unseen parts of the human given a single image. 
+            We train this model on texture map space, which makes it more sample-efficient since it is invariant to pose and viewpoint. 
+            Second, we develop a diffusion-based rendering pipeline, which is controlled by 3D human poses. This produces realistic renderings of novel poses of the person, 
+            including clothing, hair, and plausible in-filling of unseen regions. 
+          </p>
+          <p>
+            This disentangled approach allows our method to generate a sequence of images that are faithful 
+            to the target motion in the 3D pose and, to the input image in terms of visual similarity. Our experiments show that our method is resilient in generating prolonged 
+            motions and varied challenging and complex poses compared to prior methods.
           </p>
         </div>
       </div>
@@ -351,11 +313,158 @@
   <div class="container is-max-desktop">
 
 <!--     <div class="columns is-centered"> -->
+    <!-- different camera angle -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">3DHM Enables Random Camera Angles</h2>
 
+        <!-- Re-rendering. -->
+<!--         <h3 class="title is-4">Re-rendering the input video</h3> -->
+        <div class="content has-text-justified">
+          <p>
+            Using 3D, you can synthesize moving humans from different camera angles.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/v1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ different camera angle -->
+
+    <!-- long-range -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">3DHM Enables Long-range Human Video Generation</h2>
+
+        <!-- Re-rendering. -->
+<!--         <h3 class="title is-4">Re-rendering the input video</h3> -->
+        <div class="content has-text-justified">
+          <p>
+            3DHM Enables Long-range Human Video Generation
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr10_10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ long-range. -->
+
+      </div>
+    </div>
+    <!--/ long-range -->
+
+
+    <!-- from back -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">3DHM Enables Animations Only from Back</h2>
+
+        <!-- Re-rendering. -->
+<!--         <h3 class="title is-4">3DHM Enables Animations Only from Back</h3> -->
+        <div class="content has-text-justified">
+          <p>
+            Using 3D, you can predict human videos by only seeing the backside of the human photo.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr41_10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ from back. -->
+
+      </div>
+    </div>
+    <!--/ from back. -->
+
+    <!-- Motion from Text -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Human Motion from Text</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Prompt: A person turns to his right and paces back and forth. </h3>
+        <div class="content has-text-justified">
+          <p>
+            Using 3D, you can synthesize moving humans from text input.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr3t4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Motion from Text -->
+
+    
+
+    <!-- various viewpoints -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">360 degree Viewpoints</h2>
+
+        <!-- Re-rendering. -->
+<!--         <h3 class="title is-4">Re-rendering the input video</h3> -->
+        <div class="content has-text-justified">
+          <p>
+            With 3D control, you can synthesize moving humans from different viewpoints.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr9_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ various view points. -->
+    
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">More Animations</h2>
 
         <!-- Re-rendering. -->
 <!--         <h3 class="title is-4">Re-rendering the input video</h3> -->
@@ -384,10 +493,10 @@
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+<!--         <h2 class="title is-3">Animation</h2> -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+<!--         <h3 class="title is-4">Re-rendering the input video</h3> -->
         <div class="content has-text-justified">
           <p>
             Make the man dance like the performer.
@@ -410,166 +519,19 @@
     </div>
     <!--/ Animation. -->
 
-    
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            3DHM Enables Long-range Human Video Generation
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 height="100%" autoplay>
-            <source src="./static/videos/v4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">3DHM Enables Random Camera Angles</h2>
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using 3D, you can synthesize moving humans from different camera angles.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 height="100%" autoplay>
-            <source src="./static/videos/v1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">3D</h2>
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">3DHM Enables Animations Only from Back</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using 3D, you can predict human videos by only seeing the backside of the human photo.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 height="100%" autoplay>
-            <source src="./static/videos/v1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
 
 
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Human Motion from Text</h2>
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+<!--         <h3 class="title is-4">Re-rendering the input video</h3> --> -->
         <div class="content has-text-justified">
-          <p>
-            Using 3D, you can synthesize moving humans from text input.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 height="100%" autoplay>
-            <source src="./static/videos/v1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-    
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">360 degree Viewpoints</h2>
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using 3D, you can synthesize moving humans from different viewpoints.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 height="100%" autoplay>
-            <source src="./static/videos/v1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
+<!--           <p>
             Using 3D, you can synthesize moving humans from random video resources.
-          </p>
+          </p> -->
         </div>
         <div class="content has-text-centered">
           <video id="replay-video"
@@ -578,7 +540,7 @@
                  preload
                  playsinline
                  height="100%" autoplay>
-            <source src="./static/videos/v1.mp4"
+            <source src="./static/videos/testcvpr2_21.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -587,6 +549,244 @@
       </div>
     </div>
     <!--/ Animation. -->
+
+        <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+<!--         <h3 class="title is-4">Re-rendering the input video</h3> --> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr3_27.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+        <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Dance like Michael Jackson!</h3> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr4_15.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+      <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Dance like Gene Kelly!</h3> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr10genlly1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Skating</h3> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr12_13.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Ballet</h3> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr12_ballet0_whPsZS.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Motion from Online Relaxation Course</h3> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/v6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Skate like Michelle Kwan!</h3> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/v5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+<!--         <h2 class="title is-3">Human Motion from Random Video Resouces</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Make William Dance!</h3> -->
+        <div class="content has-text-justified">
+<!--           <p>
+            Using 3D, you can synthesize moving humans from random video resources.
+          </p> -->
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%" autoplay>
+            <source src="./static/videos/testcvpr49_10"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+  
 
     
 
