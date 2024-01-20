@@ -105,38 +105,6 @@
 
 
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://sites.google.com/site/boyilics/home">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://shubham-goel.github.io/4dhumans/">
-            4DHumans
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
- -->
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -360,7 +328,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/v1.mp4"
@@ -388,7 +356,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr10_10.mp4"
@@ -417,7 +385,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr41_10.mp4"
@@ -448,7 +416,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr3t4.mp4"
@@ -478,7 +446,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr9_1.mp4"
@@ -506,7 +474,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/v2.mp4"
@@ -534,7 +502,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/v3.mp4"
@@ -563,7 +531,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr3_27.mp4"
@@ -591,7 +559,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr2_21.mp4"
@@ -622,7 +590,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr12_13.mp4"
@@ -650,7 +618,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr12_ballet0_whPsZS.mp4"
@@ -706,7 +674,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr4_15.mp4"
@@ -734,7 +702,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/testcvpr10genlly1.mp4"
@@ -762,7 +730,7 @@
         <div class="content has-text-centered">
           <video id="replay-video"
                  muted
-                 loop
+                 preload
                  playsinline
                  height="100%" autoplay>
             <source src="./static/videos/v5.mp4"
@@ -781,81 +749,25 @@
 
     
 
-
-    <!-- Concurrent Work. -->
-<!--     <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
-
+<!-- <pre><code></code></pre> -->
 <section class="section" id="BibTeX">
-<!--   <div class="container is-max-desktop content"> -->
-  <div class="col-md-8 col-md-offset-2">
+  <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <div class="citation-block">
-    <pre><code>@article{park2021nerfies,
+    @article{park2021nerfies,
   author    = {Li, Boyi and Rajasegaran, Jathushan and Gandelsman, Yossi and Efros, Alexei A. and Malik, Jitendra},
   title     = {Synthesizing Moving People with 3D Control},
   journal   = {Arxiv},
   year      = {2024},
-}</code></pre>
+}
   </div>
 </section>
 
 
-<!-- <footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
- -->
+
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
