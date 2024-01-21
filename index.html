@@ -285,19 +285,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present a diffusion model-based framework for animating people from single images for a given target 3D motion sequence. 
+            We present a diffusion model-based framework for animating people from a single image for a given target 3D motion sequence. 
           </p>
           <p>
-            Our approach has two core components: a) learning priors about invisible parts of the human body and clothing, and b) rendering novel body poses 
-            with proper clothing and texture. First, we learn an in-filling diffusion model to hallucinate unseen parts of the human given a single image. 
-            We train this model on texture map space, which makes it more sample-efficient since it is invariant to pose and viewpoint. 
-            Second, we develop a diffusion-based rendering pipeline, which is controlled by 3D human poses. This produces realistic renderings of novel poses of the person, 
-            including clothing, hair, and plausible in-filling of unseen regions. 
+            Our approach has two core components: a) learning priors about invisible parts of the human body and clothing, and b) rendering novel body poses with proper clothing and texture. For the first part, we learn an in-filling diffusion model to hallucinate unseen parts of a person given a single image. We train this model on texture map space, which makes it more sample-efficient since it is invariant to pose and viewpoint. Second, we develop a diffusion-based rendering pipeline, which is controlled by 3D human poses. This produces realistic renderings of novel poses of the person, including clothing, hair, and plausible in-filling of unseen regions. 
           </p>
           <p>
-            This disentangled approach allows our method to generate a sequence of images that are faithful 
-            to the target motion in the 3D pose and, to the input image in terms of visual similarity. Our experiments show that our method is resilient in generating prolonged 
-            motions and varied challenging and complex poses compared to prior methods.
+            This disentangled approach allows our method to generate a sequence of images that are faithful to the target motion in the 3D pose and, to the input image in terms of visual similarity. In addition to that, the 3D control allows various synthetic camera trajectories to render a person. Our experiments show that our method is resilient in generating prolonged motions and varied challenging and complex poses compared to prior methods. 
           </p>
         </div>
       </div>
